@@ -20,6 +20,8 @@ gclient config --name=src https://github.com/nwjs/chromium.src.git@origin/"${DEF
 
 # export MAGIC='"src/third_party/WebKit/LayoutTests": None, "src/chrome_frame/tools/test/reference_build/chrome": None, "src/chrome_frame/tools/test/reference_build/chrome_win": None, "src/chrome/tools/test/reference_build/chrome": None, "src/chrome/tools/test/reference_build/chrome_linux": None, "src/chrome/tools/test/reference_build/chrome_mac": None, "src/chrome/tools/test/reference_build/chrome_win": None,'
 
+read -n 1 -s -r -p "Edit .gclient to disable sync of the tests, then press any key to continue"
+
 # awk -v values="${MAGIC}" '/custom_deps/ { print; print values; next }1' .gclient | cat > .gclient.temp
 # mv .gclient.temp .gclient
 
